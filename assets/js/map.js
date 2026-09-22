@@ -3,8 +3,11 @@
    three language builds share one script. */
 (function () {
   'use strict';
-  var host = document.querySelector('[data-map]');
-  if (!host || !window.FUJI_GEO) return;
+  if (!window.FUJI_GEO) return;
+  var hosts = document.querySelectorAll('[data-map]');
+  Array.prototype.forEach.call(hosts, function (host, idx) { init(host, idx); });
+
+  function init(host, idx) {
 
   var GEO = window.FUJI_GEO;
   var COPY = JSON.parse(host.getAttribute('data-copy'));
@@ -31,7 +34,7 @@
     return n;
   }
   var defs = el('defs', {});
-  var filt = el('filter', { id: 'mglow', x: '-60%', y: '-60%', width: '220%', height: '220%' });
+  var filt = el('filter', { id: idx ? 'mglow' + idx : 'mglow', x: '-60%', y: '-60%', width: '220%', height: '220%' });
   filt.appendChild(el('feGaussianBlur', { stdDeviation: '5', result: 'b' }));
   var merge = el('feMerge', {});
   merge.appendChild(el('feMergeNode', { 'in': 'b' }));
@@ -108,4 +111,5 @@
   });
 
   select(COPY.initial);
+  }
 })();
