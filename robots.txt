@@ -1,0 +1,7 @@
+# robots.txt for fujielevatorlatam.com
+# REVIEW BUILD: the client asked for a test link that search engines do not
+# index. On launch day replace this file with _source/launch/robots.txt and set
+# PREVIEW_NOINDEX = False in content.py (see CLAUDE.md, "Before launch").
+
+User-agent: *
+Disallow: /

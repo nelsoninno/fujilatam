@@ -1,0 +1,40 @@
+/* tokens.css : colors + fonts ONLY. The one file to edit to re-skin FujiLatam. */
+:root{
+  /* Brand palette */
+  --bg:        #FFFFFF;   /* page background */
+  --ink:       #0E1116;   /* main text */
+  --ink-soft:  #3A424D;   /* secondary text on light */
+  --muted:     #6B7480;   /* tertiary text, captions */
+  --accent:    #0A5AA8;   /* Fuji blue: links, buttons, primary */
+  --accent-dk: #07417A;   /* hover / pressed */
+  --accent-2:  #2B8FE0;   /* bright blue: highlights, focus */
+  --brass:     #C08A3E;   /* warm accent, from the gold cabin work */
+  --brass-lt:  #E3C48C;
+  --surface:   #F4F6F8;   /* alt sections, cards */
+  --surface-2: #E7ECF1;   /* borders, dividers, chips */
+  --line:      #D8DFE6;
+
+  /* Tinted sections. Pedro, 21 Sept: "lo veo muy oscuro". The near-black
+     sections became a pale Fuji-blue tint; navy is kept for the hero backdrop,
+     the closing call to action and the footer only. */
+  --tint:      #EEF4FA;   /* pale blue section background */
+  --tint-line: #D5E1EE;
+  --map-land:  #C7D3E0;   /* countries without a named distributor */
+  --map-land-hv:#AFC0D2;
+  --dark:      #0B2F57;   /* Fuji navy */
+  --dark-2:    #0F3A68;
+  --on-dark:   #F2F6FA;
+  --on-dark-soft: #C3D2E2;
+
+  /* Footer credit colors (read by the EKY credit logo) */
+  --footer-bg: var(--dark);
+  --footer-fg: #EEF2F6;
+
+  /* Fonts */
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-body:    'Inter', 'Helvetica Neue', Arial, system-ui, sans-serif;
+
+  /* Layout */
+  --max: 1200px;
+  --radius: 4px;
+}
