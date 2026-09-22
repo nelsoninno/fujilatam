@@ -4,11 +4,11 @@
   --bg:        #FFFFFF;   /* page background */
   --ink:       #0E1116;   /* main text */
   --ink-soft:  #3A424D;   /* secondary text on light */
-  --muted:     #6B7480;   /* tertiary text, captions */
+  --muted:     #4F5864;   /* tertiary text, captions. 6.5:1 or better on every light background */
   --accent:    #0A5AA8;   /* Fuji blue: links, buttons, primary */
   --accent-dk: #07417A;   /* hover / pressed */
   --accent-2:  #2B8FE0;   /* bright blue: highlights, focus */
-  --brass:     #C08A3E;   /* warm accent, from the gold cabin work */
+  --brass:     #8A5F22;   /* warm accent (bronze). White text on it is 5.6:1; the old #C08A3E was 3:1 */
   --brass-lt:  #E3C48C;
   --surface:   #F4F6F8;   /* alt sections, cards */
   --surface-2: #E7ECF1;   /* borders, dividers, chips */

@@ -61,7 +61,8 @@ p{max-width:68ch}
 .hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;background:var(--dark);overflow:hidden}
 .hero__media{position:absolute;inset:0}
 .hero__media video,.hero__media img{width:100%;height:100%;object-fit:cover}
-.hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,47,87,.28) 0%,rgba(11,47,87,.06) 40%,rgba(11,47,87,.72) 100%)}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,47,87,.86) 0%,rgba(11,47,87,.66) 42%,rgba(11,47,87,.18) 78%,rgba(11,47,87,0) 100%),linear-gradient(180deg,rgba(11,47,87,.2) 0%,rgba(11,47,87,0) 35%,rgba(11,47,87,.55) 100%)}
+@media(max-width:760px){.hero__scrim{background:linear-gradient(180deg,rgba(11,47,87,.45) 0%,rgba(11,47,87,.7) 45%,rgba(11,47,87,.9) 100%)}}
 .hero__inner{position:relative;padding-block:clamp(2.5rem,7vw,5rem);color:var(--on-dark);width:100%}
 .hero h1{color:#fff;max-width:17ch}
 .hero__claim{margin-top:1.1rem;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--on-dark);max-width:52ch;font-weight:500}
@@ -71,7 +72,7 @@ p{max-width:68ch}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
 .stat{background:var(--bg);padding:1.6rem clamp(1.1rem,3vw,2rem)}
 .stat__n{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;color:var(--accent);line-height:1}
-.stat__l{font-size:.88rem;color:var(--muted);margin-top:.45rem}
+.stat__l{font-size:.92rem;color:var(--ink-soft);margin-top:.45rem}
 
 /* ---------- grids ---------- */
 .grid{display:grid;gap:clamp(1.1rem,2.5vw,2rem)}
@@ -95,7 +96,7 @@ p{max-width:68ch}
 .pcard__body{padding:1.2rem 1.3rem 1.5rem;display:flex;flex-direction:column;flex:1}
 .pcard h3{font-size:1.12rem;margin-bottom:.4rem}
 .pcard p{font-size:.92rem;color:var(--ink-soft);max-width:none;flex:1}
-.pcard__spec{margin-top:.9rem;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);padding-top:.75rem;font-variant-numeric:tabular-nums}
+.pcard__spec{margin-top:.9rem;font-size:.86rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:.75rem;font-variant-numeric:tabular-nums}
 .rank{display:inline-block;align-self:flex-start;font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--surface-2);color:var(--ink-soft);padding:.25rem .55rem;border-radius:2px;margin-bottom:.6rem}
 .rank--1{background:var(--accent);color:#fff}
 
@@ -257,7 +258,7 @@ p{max-width:68ch}
 .door{margin:0}
 .door img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;border-radius:2px;box-shadow:0 6px 18px rgba(11,47,87,.1);transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s}
 .door:hover img{transform:translateY(-6px);box-shadow:0 14px 28px rgba(11,47,87,.18)}
-.door figcaption{font-size:.68rem;color:var(--accent);font-weight:600;margin-top:.35rem;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.door figcaption{font-size:.74rem;color:var(--accent);font-weight:600;margin-top:.35rem;letter-spacing:.02em;font-variant-numeric:tabular-nums}
 @media(max-width:900px){.doorstrip{grid-template-columns:repeat(6,minmax(0,1fr))}}
 @media(max-width:520px){.doorstrip{grid-template-columns:repeat(4,minmax(0,1fr))}.doorstrip .door:nth-child(n+9){display:none}}
 
