@@ -68,6 +68,18 @@ p{max-width:68ch}
 .stat{background:var(--bg);padding:1.6rem clamp(1.1rem,3vw,2rem)}
 .stat__n{font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;color:var(--accent);line-height:1}
 .stat__l{font-size:.92rem;color:var(--ink-soft);margin-top:.45rem}
+/* a row of buttons never relies on inline spacing: in a paragraph they overlap
+   once they wrap on a phone */
+.btnrow{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.center .btnrow{justify-content:center}
+/* three stats in a two column grid leave an empty cell on a phone, and the
+   first number wraps mid figure, so below this width each stat is its own row */
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr}
+  .stat{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .9rem;padding:1.15rem clamp(1.1rem,3vw,2rem)}
+  .stat__n{flex:0 0 auto;font-size:1.45rem}
+  .stat__l{margin-top:0;font-size:.88rem;flex:1 1 180px}
+}
 
 /* ---------- grids ---------- */
 .grid{display:grid;gap:clamp(1.1rem,2.5vw,2rem)}
