@@ -76,9 +76,9 @@ p{max-width:68ch}
    first number wraps mid figure, so below this width each stat is its own row */
 @media(max-width:760px){
   .stats{grid-template-columns:1fr}
-  .stat{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .9rem;padding:1.15rem clamp(1.1rem,3vw,2rem)}
-  .stat__n{flex:0 0 auto;font-size:1.45rem}
-  .stat__l{margin-top:0;font-size:.88rem;flex:1 1 180px}
+  .stat{text-align:center;padding:1.35rem clamp(1.1rem,3vw,2rem)}
+  .stat__n{font-size:1.7rem}
+  .stat__l{margin-top:.3rem;font-size:.9rem;max-width:34ch;margin-inline:auto}
 }
 
 /* ---------- grids ---------- */
