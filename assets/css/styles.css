@@ -53,7 +53,8 @@ p{max-width:68ch}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 
 /* ---------- hero ---------- */
-.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;background:var(--dark);overflow:hidden}
+.hero{position:relative;background:var(--dark)}
+.hero__stage{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;overflow:hidden}
 .hero__media{position:absolute;inset:0}
 .hero__media video,.hero__media img{width:100%;height:100%;object-fit:cover}
 .hero__scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,17,22,.85) 0%,rgba(14,17,22,.62) 45%,rgba(14,17,22,.15) 80%,rgba(14,17,22,0) 100%),linear-gradient(180deg,rgba(14,17,22,.35) 0%,rgba(14,17,22,.05) 38%,rgba(14,17,22,.9) 100%)}
@@ -185,7 +186,7 @@ p{max-width:68ch}
   .nav a{padding:.7rem 0;width:100%;border-bottom:1px solid var(--surface-2)}
   .nav .lang{padding-top:.9rem}
   .nav-toggle{display:block}
-  .hero{min-height:78vh}
+  .hero__stage{min-height:78vh}
 }
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
@@ -306,3 +307,47 @@ p{max-width:68ch}
 .form__status.is-error{color:var(--brass-dk)}
 .field select:disabled{opacity:.6}
 [hidden]{display:none!important}
+
+/* ---------- 3D elevator ride (section under the hero) ----------
+   Hidden unless elevator3d.js confirms WebGL and adds .is-3d. The section is
+   taller than the screen and its stage stays pinned, so scrolling drives the
+   ride: doors close, the car climbs ten floors, doors open at the top. */
+.ride{display:none;position:relative;background:var(--dark);color:var(--on-dark);--hdr:73px}
+.ride.is-3d,.ride.is-3d-static{display:block}
+.ride.is-3d{height:240vh}
+.ride__stage{position:relative;height:calc(100vh - var(--hdr));overflow:hidden;display:flex;align-items:center;background:radial-gradient(ellipse at 72% 55%,rgba(10,90,168,.22),transparent 60%),var(--dark)}
+@supports (height:100svh){.ride__stage{height:calc(100svh - var(--hdr))}}
+.ride.is-3d .ride__stage{position:sticky;top:var(--hdr)}
+.ride__3d{position:absolute;top:0;right:0;bottom:0;width:58%;z-index:1;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%);mask-image:linear-gradient(90deg,transparent 0,#000 18%)}
+.ride__3d canvas{width:100%;height:100%;display:block}
+.ride__copy{position:relative;z-index:2;width:100%}
+.ride__copy>*{max-width:30rem}
+.ride h2{color:#fff}
+.ride .eyebrow{color:var(--brass-lt)}
+.ride__lede{margin-top:1rem;color:var(--on-dark-soft)}
+.ride__stops{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:.9rem}
+.ride__stops li{display:flex;align-items:baseline;gap:.9rem;color:var(--on-dark-soft);opacity:.45;transform:translateX(-6px);transition:opacity .5s,transform .5s,color .5s}
+.ride__stops li span{font-family:var(--font-display);font-weight:700;font-size:.8rem;letter-spacing:.1em;color:var(--brass-lt);min-width:2.2ch;font-variant-numeric:tabular-nums}
+.ride__stops li.is-on{opacity:1;transform:none;color:#fff}
+.lift-ind{position:absolute;top:clamp(1rem,4vh,2.2rem);right:clamp(1rem,4vw,3rem);display:flex;align-items:center;gap:.5rem;padding:.45rem .8rem;border:1px solid rgba(227,196,140,.35);border-radius:3px;background:rgba(14,17,22,.6);backdrop-filter:blur(6px);font-family:var(--font-display);font-weight:700;color:var(--brass-lt);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.lift-ind__n{font-size:1.35rem;line-height:1;min-width:2ch;text-align:center}
+.lift-ind__arrow{width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;opacity:.25;border-bottom:9px solid var(--brass-lt);transition:opacity .2s,transform .2s}
+.lift-ind__arrow[data-dir="up"]{opacity:1}
+.lift-ind__arrow[data-dir="down"]{opacity:1;transform:rotate(180deg)}
+.ride__hint{display:none}
+.ride.is-3d .ride__hint{display:block;position:absolute;left:50%;bottom:1.1rem;transform:translateX(-50%);z-index:3;margin:0;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-soft);transition:opacity .4s}
+.ride.is-3d .ride__hint::after{content:"";display:block;width:1px;height:28px;margin:.5rem auto 0;background:linear-gradient(var(--brass-lt),transparent);animation:hintDrop 1.6s ease-in-out infinite}
+.ride__hint.is-gone{opacity:0}
+@keyframes hintDrop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:900px){
+  .ride.is-3d{height:200vh}
+  .ride__stage{align-items:flex-end}
+  .ride__3d{width:100%;bottom:auto;height:60%;-webkit-mask-image:linear-gradient(180deg,#000 65%,transparent 100%);mask-image:linear-gradient(180deg,#000 65%,transparent 100%)}
+  .ride__copy{padding-bottom:1.6rem}
+  .ride h2{font-size:1.45rem}
+  .ride__lede{display:none}
+  .ride__stops{margin-top:1rem;gap:.55rem;font-size:.92rem}
+  .ride.is-3d .ride__hint{display:none}
+  .lift-ind{top:.9rem;right:.9rem}
+}
+@media(prefers-reduced-motion:reduce){.ride.is-3d{height:auto}.ride__stops li{opacity:1;transform:none}}

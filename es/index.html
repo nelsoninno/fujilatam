@@ -354,7 +354,7 @@
    "name": "FujiLatam vertical transport",
    "description": "Movemos gente. Tecnología japonesa, producción de alta calidad en China, y equipos fabricados a la medida de cada proyecto.",
    "thumbnailUrl": "https://fujielevatorlatam.com/assets/images/hero/hero-poster-fujilatam-fujielevatorlatam.com.webp",
-   "uploadDate": "2026-10-06",
+   "uploadDate": "2026-10-27",
    "duration": "PT16S",
    "contentUrl": "https://fujielevatorlatam.com/assets/video/fujilatam-hero-fujielevatorlatam.com.mp4",
    "publisher": {
@@ -379,6 +379,7 @@
 <main>
 
 <section class="hero">
+  <div class="hero__stage">
   <div class="hero__media">
     <video autoplay muted loop playsinline preload="metadata"
            poster="../assets/images/hero/hero-poster-fujilatam-fujielevatorlatam.com.webp"
@@ -395,6 +396,22 @@
       <a class="btn btn--primary" href="distributors.html">Sea distribuidor Fuji</a>
       <a class="btn btn--ghost" style="color:#fff" href="products.html">Ver productos</a>
     </div>
+  </div>
+  </div>
+</section>
+
+<section class="ride" data-ride3d aria-label="De la planta baja al último piso, sin sorpresas">
+  <div class="ride__stage">
+    <div class="ride__3d" data-elevator3d aria-hidden="true">
+      <div class="lift-ind"><span class="lift-ind__arrow" data-dir=""></span><span class="lift-ind__n">01</span></div>
+    </div>
+    <div class="ride__copy wrap">
+      <p class="eyebrow">Piso por piso</p>
+      <h2>De la planta baja al último piso, sin sorpresas</h2>
+      <p class="lede ride__lede">Cabina panorámica, máquina de tracción sin cuarto de máquinas y puertas automáticas. Cada pieza se fabrica a la medida del edificio.</p>
+      <ol class="ride__stops"><li data-at="0.12"><span>01</span>Puertas automáticas que abren y cierran suave</li><li data-at="0.5"><span>05</span>Tracción sin engranes, silenciosa y eficiente</li><li data-at="0.88"><span>10</span>Cabina y acabados a la medida de su proyecto</li></ol>
+    </div>
+    <p class="ride__hint" aria-hidden="true">Desliza</p>
   </div>
 </section>
 
@@ -573,5 +590,6 @@
 <script src="../assets/js/main.js" defer></script>
 <script src="../assets/js/latam-geo.js" defer></script>
 <script src="../assets/js/map.js" defer></script>
+<script src="../assets/js/elevator3d.js" defer></script>
 </body>
 </html>

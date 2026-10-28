@@ -354,7 +354,7 @@
    "name": "FujiLatam vertical transport",
    "description": "Movemos pessoas. Tecnologia japonesa, produção de alta qualidade na China e equipamentos fabricados sob medida para cada projeto.",
    "thumbnailUrl": "https://fujielevatorlatam.com/assets/images/hero/hero-poster-fujilatam-fujielevatorlatam.com.webp",
-   "uploadDate": "2026-10-06",
+   "uploadDate": "2026-10-27",
    "duration": "PT16S",
    "contentUrl": "https://fujielevatorlatam.com/assets/video/fujilatam-hero-fujielevatorlatam.com.mp4",
    "publisher": {
@@ -379,6 +379,7 @@
 <main>
 
 <section class="hero">
+  <div class="hero__stage">
   <div class="hero__media">
     <video autoplay muted loop playsinline preload="metadata"
            poster="../assets/images/hero/hero-poster-fujilatam-fujielevatorlatam.com.webp"
@@ -395,6 +396,22 @@
       <a class="btn btn--primary" href="distributors.html">Seja distribuidor Fuji</a>
       <a class="btn btn--ghost" style="color:#fff" href="products.html">Ver produtos</a>
     </div>
+  </div>
+  </div>
+</section>
+
+<section class="ride" data-ride3d aria-label="Do térreo ao último andar, sem surpresas">
+  <div class="ride__stage">
+    <div class="ride__3d" data-elevator3d aria-hidden="true">
+      <div class="lift-ind"><span class="lift-ind__arrow" data-dir=""></span><span class="lift-ind__n">01</span></div>
+    </div>
+    <div class="ride__copy wrap">
+      <p class="eyebrow">Andar por andar</p>
+      <h2>Do térreo ao último andar, sem surpresas</h2>
+      <p class="lede ride__lede">Cabine panorâmica, tração sem casa de máquinas e portas automáticas. Cada peça é fabricada sob medida para o edifício.</p>
+      <ol class="ride__stops"><li data-at="0.12"><span>01</span>Portas automáticas que abrem e fecham suave</li><li data-at="0.5"><span>05</span>Tração sem engrenagens, silenciosa e eficiente</li><li data-at="0.88"><span>10</span>Cabine e acabamentos sob medida para o seu projeto</li></ol>
+    </div>
+    <p class="ride__hint" aria-hidden="true">Role</p>
   </div>
 </section>
 
@@ -573,5 +590,6 @@
 <script src="../assets/js/main.js" defer></script>
 <script src="../assets/js/latam-geo.js" defer></script>
 <script src="../assets/js/map.js" defer></script>
+<script src="../assets/js/elevator3d.js" defer></script>
 </body>
 </html>
