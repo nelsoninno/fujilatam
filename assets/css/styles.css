@@ -351,3 +351,14 @@ p{max-width:68ch}
   .lift-ind{top:.9rem;right:.9rem}
 }
 @media(prefers-reduced-motion:reduce){.ride.is-3d{height:auto}.ride__stops li{opacity:1;transform:none}}
+
+/* ---------- 3D models on the three product line cards ----------
+   lines3d (inside elevator3d.js) adds .has-3d when WebGL works; the photo then
+   stays in the markup for search engines but the model is what shows. */
+.pcard__img{position:relative}
+.pcard__3d{display:none}
+.pcard__img.has-3d{background:radial-gradient(ellipse at 50% 38%,var(--studio-1) 0%,var(--studio-2) 58%,var(--studio-3) 100%)}
+.pcard__img.has-3d img{opacity:0}
+.pcard__img.has-3d .pcard__3d{display:block;position:absolute;inset:0}
+.pcard__3d canvas{width:100%;height:100%;display:block}
+.pcard__img.has-3d::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,var(--brass),transparent);opacity:.7}
